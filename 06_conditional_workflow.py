@@ -17,7 +17,6 @@ def find_Discriminant(state:Workflow_State) -> Workflow_State:
     c = state['c']
 
     descriminant = ((b ** 2) - (4 * a * c)) ** 0.5
-
     descriminant = descriminant if isinstance(descriminant, float) else -1
 
     return {"discriminant" : descriminant}
@@ -44,7 +43,6 @@ def descriminant_greater_then_zero(state:Workflow_State) -> Workflow_State:
     }}
 
 def descriminant_less_then_zero(state:Workflow_State) -> Workflow_State:
-
     return {"roots" : {"message" : "There is no roots!"}}
 
 def print_equation(state:Workflow_State) :
@@ -63,7 +61,6 @@ def print_equation(state:Workflow_State) :
 
 
 def check_condition(state:Workflow_State) -> Literal['descriminant_equal_to_zero','descriminant_greater_then_zero','descriminant_less_then_zero']:
-
     descriminant = state['discriminant']
 
     if descriminant > 0:
